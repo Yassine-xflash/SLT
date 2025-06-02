@@ -1,0 +1,1 @@
+export { VisualidentityWrapperByAnima } from "./VisualidentityWrapperByAnima";
