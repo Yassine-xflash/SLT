@@ -19,22 +19,22 @@ export const VisualidentityByAnima = (): JSX.Element => {
 
   const middleRowColors = [
     { bg: "#73787C", text: "#73787C", textColor: "text-white" },
-    { bg: "#C5C6C7", text: "#C5C6C7", textColor: "text-black" },
-    { bg: "#D7E5F0", text: "#D7E5F0", textColor: "text-black" },
+    { bg: "#C5C6C7", text: "#C5C6C7", textColor: "text-black" }, // Assuming this should be black text on light gray
+    { bg: "#D7E5F0", text: "#D7E5F0", textColor: "text-black" }, // Assuming this should be black text on light blue/gray
   ];
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white py-8 md:py-12"> {/* Added some vertical padding to the section */}
       {/* Top row of colors */}
-      <div className="grid grid-cols-3 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-3 w-full">
         {topRowColors.map((color, index) => (
-          <Card key={index} className="rounded-none border-0">
+          <Card key={`top-${index}`} className="rounded-none border-0">
             <CardContent
-              className={`p-0 h-[217px] bg-[${color.bg}] flex items-center justify-center`}
-              style={{ backgroundColor: color.bg }}
+              className="p-4 flex items-center justify-center min-h-[150px] sm:min-h-[180px] md:min-h-[200px]" // Responsive padding and min-height
+              style={{ backgroundColor: color.bg }} // Keep direct style for dynamic hex
             >
               <div
-                className={`font-['Montserrat',Helvetica] font-bold ${color.textColor} text-xl text-center`}
+                className={`font-['Montserrat',Helvetica] font-bold ${color.textColor} text-lg md:text-xl text-center break-all`} // break-all for long hex codes
               >
                 {color.text}
               </div>
@@ -44,15 +44,15 @@ export const VisualidentityByAnima = (): JSX.Element => {
       </div>
 
       {/* Middle row of colors */}
-      <div className="grid grid-cols-3 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-3 w-full">
         {middleRowColors.map((color, index) => (
-          <Card key={index} className="rounded-none border-0">
+          <Card key={`middle-${index}`} className="rounded-none border-0">
             <CardContent
-              className={`p-0 h-[214px] bg-[${color.bg}] flex items-center justify-center`}
-              style={{ backgroundColor: color.bg }}
+              className="p-4 flex items-center justify-center min-h-[150px] sm:min-h-[180px] md:min-h-[200px]" // Responsive padding and min-height
+              style={{ backgroundColor: color.bg }} // Keep direct style for dynamic hex
             >
               <div
-                className={`font-['Montserrat',Helvetica] font-bold ${color.textColor} text-xl text-center`}
+                className={`font-['Montserrat',Helvetica] font-bold ${color.textColor} text-lg md:text-xl text-center break-all`}
               >
                 {color.text}
               </div>
@@ -63,13 +63,13 @@ export const VisualidentityByAnima = (): JSX.Element => {
 
       {/* Bottom black section */}
       <Card className="rounded-none border-0">
-        <CardContent className="p-0 h-[377px] bg-black relative">
-          <div className="absolute h-6 top-[218px] left-[68px] font-['Montserrat',Helvetica] font-bold text-white text-xl">
-            #000000
-          </div>
-          <div className="absolute w-[406px] h-[55px] top-[145px] left-[68px] font-['Montserrat',Helvetica] font-bold text-white text-[45px]">
+        <CardContent className="bg-black flex flex-col justify-center items-start py-16 sm:py-24 md:py-32 px-6 sm:px-8 md:px-16 min-h-[250px] sm:min-h-[300px] md:min-h-[350px]"> {/* Flex layout, responsive padding and min-height */}
+          <h2 className="font-['Montserrat',Helvetica] font-bold text-white text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4">
             COLOR SCHEME
-          </div>
+          </h2>
+          <p className="font-['Montserrat',Helvetica] font-bold text-white text-lg sm:text-xl md:text-2xl">
+            #000000
+          </p>
         </CardContent>
       </Card>
     </section>

@@ -18,28 +18,28 @@ export const VisualidentityWrapperByAnima = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative w-full py-16 px-8 overflow-hidden bg-gradient-to-tr from-black to-[#554940]">
+    <section className="relative w-full py-10 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-hidden bg-gradient-to-tr from-black to-[#554940]"> {/* Responsive padding */}
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-1/3">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start"> {/* Responsive gap and alignment */}
+          <div className="w-full md:w-1/3 flex justify-center md:justify-start"> {/* Centering image on mobile */}
             <img
-              className="w-[290px] h-[287px] object-cover"
-              alt="Whatsapp image"
+              className="w-full max-w-[290px] h-auto md:w-[290px] md:h-[287px] object-contain md:object-cover rounded-lg" // Responsive image: full width on mobile, fixed on md+; object-contain for mobile safety
+              alt="Team Visual"
               src="/whatsapp-image-2025-05-27-at-12-04-36-removebg-preview-3.png"
             />
           </div>
 
-          <div className="w-full md:w-2/3 flex flex-col gap-6">
-            <h2 className="text-[45px] font-bold text-white font-['Inter',Helvetica]">
+          <div className="w-full md:w-2/3 flex flex-col gap-4 md:gap-6 text-center md:text-left"> {/* Responsive gap and text alignment */}
+            <h2 className="text-3xl sm:text-4xl md:text-[45px] font-bold text-white font-['Inter',Helvetica]"> {/* Responsive text size */}
               Meet the Team
             </h2>
 
             <Card className="bg-transparent border-none">
-              <CardContent className="p-0 space-y-8">
+              <CardContent className="p-0 space-y-4 md:space-y-6"> {/* Responsive spacing for paragraphs */}
                 {teamDescriptions.map((description, index) => (
                   <p
                     key={index}
-                    className="text-xl text-white font-['Inter',Helvetica] font-normal"
+                    className="text-base sm:text-lg md:text-xl text-white font-['Inter',Helvetica] font-normal" // Responsive text size
                   >
                     {description}
                   </p>
@@ -49,9 +49,9 @@ export const VisualidentityWrapperByAnima = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="mt-16">
-          <Separator className="bg-white/50 h-px w-full max-w-[1085px] mx-auto" />
-          <p className="text-xl text-white font-['Inter',Helvetica] font-normal mt-8 text-center">
+        <div className="mt-12 md:mt-16"> {/* Responsive margin */}
+          <Separator className="bg-white/50 h-px w-full max-w-4xl mx-auto" /> {/* Constrained separator width, centered */}
+          <p className="text-base sm:text-lg md:text-xl text-white font-['Inter',Helvetica] font-normal mt-6 md:mt-8 text-center"> {/* Responsive text size and margin */}
             Driven by innovation. Powered by people.
           </p>
         </div>

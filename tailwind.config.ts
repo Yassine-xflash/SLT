@@ -72,7 +72,7 @@ const config: Config = {
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
   },
-  plugins: [require("tailwindcss-animate")], // Added common animate plugin, existing plugins were empty
+  plugins: [],
   darkMode: ["class"],
 }
 export default config
