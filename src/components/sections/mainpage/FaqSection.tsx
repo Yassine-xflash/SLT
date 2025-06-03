@@ -7,7 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Card } from "@/components/ui/card"; // Only Card is needed, CardContent is used inline
+import { Card } from "@/components/ui/card";
+import { Plus, Minus } from "lucide-react"; // Import Plus and Minus icons
 
 /**
  * @module FaqSection
@@ -74,13 +75,15 @@ export const FaqSection = (): JSX.Element => {
               collapsible
               className="w-full"
             >
-              <AccordionItem value={`item-${index}`} className="border-none">
+              <AccordionItem value={`item-${index}`} className="border-none group"> {/* Added group here for data-state targeting from parent */}
                 <Card className="rounded-lg border border-solid border-[#2b2b2b] bg-white shadow-md">
-                  <AccordionTrigger className="px-4 sm:px-6 py-3 sm:py-4 [font-family:'Open_Sans',Helvetica] font-normal text-black text-sm sm:text-base md:text-lg lg:text-xl text-left">
-                    {faq.question}
+                  <AccordionTrigger className="px-4 sm:px-6 py-3 sm:py-4 [font-family:'Open_Sans',Helvetica] font-normal text-black text-sm sm:text-base md:text-lg lg:text-xl text-left hover:no-underline"> {/* Removed hover:underline from trigger for cleaner look with icon */}
+                    <span className="flex-1 text-left">{faq.question}</span> {/* Ensure question text takes up available space */}
+                    <Plus className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-gray-700 group-data-[state=open]:hidden ml-4 shrink-0" /> {/* Responsive icon size and margin */}
+                    <Minus className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-gray-700 hidden group-data-[state=open]:block ml-4 shrink-0" />
                   </AccordionTrigger>
                   {faq.answer && ( // Only render content if answer exists
-                    <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4">
+                    <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4 pt-0"> {/* Added pt-0 to content for better spacing after trigger */}
                       <p className="[font-family:'Open_Sans',Helvetica] font-normal text-black text-xs sm:text-sm md:text-base">
                         {faq.answer}
                       </p>

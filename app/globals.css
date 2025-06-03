@@ -98,3 +98,25 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Marquee animation styles */
+.marquee-container {
+  overflow: hidden; /* Hide the parts of the content that are outside the viewport */
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content; /* Ensure the container is wide enough for all items */
+  animation: marquee 60s linear infinite; /* Adjust duration as needed */
+  will-change: transform; /* Optimize for animation */
+}
+
+.marquee-content:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Assumes content is duplicated once */
+}
