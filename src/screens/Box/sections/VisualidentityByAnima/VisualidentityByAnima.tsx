@@ -1,5 +1,13 @@
+/**
+ * @module VisualidentityByAnima
+ * @description
+ * Displays the color scheme section of the website's visual identity.
+ * It showcases primary and secondary color palettes using Card components.
+ * This component is purely presentational.
+ * @returns {JSX.Element} The rendered color scheme section.
+ */
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const VisualidentityByAnima = (): JSX.Element => {
   // Color data for mapping

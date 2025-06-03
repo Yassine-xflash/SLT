@@ -1,8 +1,33 @@
+/**
+ * @module Accordion
+ * @description
+ * A vertically stacked set of interactive headings that each reveal a section of content.
+ * Based on Radix UI Accordion primitive.
+ * @see https://www.radix-ui.com/primitives/docs/components/accordion
+ *
+ * @component Accordion - The main container for accordion items.
+ * @component AccordionItem - A single item within the accordion, containing a trigger and content.
+ * @component AccordionTrigger - The button that toggles an accordion item's content.
+ * @component AccordionContent - The collapsible content area of an accordion item.
+ *
+ * @example
+ * <Accordion type="single" collapsible>
+ *   <AccordionItem value="item-1">
+ *     <AccordionTrigger>Is it accessible?</AccordionTrigger>
+ *     <AccordionContent>
+ *       Yes. It adheres to the WAI-ARIA design pattern.
+ *     </AccordionContent>
+ *   </AccordionItem>
+ * </Accordion>
+ *
+ * @requires 'use client'
+ */
+"use client";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
 

@@ -1,7 +1,25 @@
+/**
+ * @module ScrollArea
+ * @description
+ * Augments native scroll functionality for custom, cross-browser styling.
+ * Based on Radix UI Scroll Area primitive.
+ * Includes ScrollArea and ScrollBar components.
+ * @see https://www.radix-ui.com/primitives/docs/components/scroll-area
+ *
+ * @example
+ * <ScrollArea className="h-[200px] w-[350px] rounded-md border p-4">
+ *   Jokester began sneaking into the castle in the middle of the night and leaving
+ *   jokes all over the place: under the king’s pillow, in his soup, even in the
+ *   royal toilet. The king was furious, but he couldn’t seem to stop Jokester.
+ * </ScrollArea>
+ *
+ * @requires 'use client'
+ */
+"use client";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,

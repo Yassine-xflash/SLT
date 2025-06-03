@@ -1,8 +1,9 @@
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
-    "./src/**/*.{html,js,ts,jsx,tsx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -48,15 +49,11 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: [
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ['var(--font-open-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        piazzolla: ['var(--font-piazzolla)'],
+        inter: ['var(--font-inter)'],
+        montserrat: ['var(--font-montserrat)'],
+        outfit: ['var(--font-outfit)'],
       },
       keyframes: {
         "accordion-down": {
@@ -75,6 +72,7 @@ module.exports = {
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")], // Added common animate plugin, existing plugins were empty
   darkMode: ["class"],
-};
+}
+export default config

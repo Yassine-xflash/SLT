@@ -1,19 +1,33 @@
+/**
+ * @module HomepageDesktopByAnima
+ * @description
+ * Provides the desktop-specific layout and content for the homepage.
+ * This component includes navigation, hero section, service banners, about information,
+ * expertise showcases, meeting booking section, technology displays, team introductions,
+ * FAQs, careers information, and the site footer.
+ * It utilizes various UI components like Accordion, Button, Card, NavigationMenu, and Separator.
+ * This component is intended to be displayed on desktop screen sizes and hidden on smaller screens,
+ * It utilizes various UI components like Accordion, Button, Card, NavigationMenu, and Separator.
+ * This component is intended to be displayed on desktop screen sizes (lg and up) and hidden on smaller screens.
+ * @returns {JSX.Element} The rendered desktop homepage view.
+ */
+'use client';
 import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../components/ui/accordion";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-} from "../../../../components/ui/navigation-menu";
-import { Separator } from "../../../../components/ui/separator";
+} from "@/components/ui/navigation-menu";
+import { Separator } from "@/components/ui/separator";
 
 export const HomepageDesktopByAnima = (): JSX.Element => {
   // Navigation menu items
@@ -135,7 +149,7 @@ export const HomepageDesktopByAnima = (): JSX.Element => {
   ];
 
   return (
-    <div className="w-full bg-white overflow-hidden">
+    <div className="w-full bg-white overflow-hidden hidden lg:block">
       {/* Navigation Bar */}
       <header className="w-full py-6 px-12">
         <div className="flex items-center justify-between">

@@ -1,3 +1,15 @@
+/**
+ * @module HomepageTabletByAnima
+ * @description
+ * Provides the tablet-specific layout and content for the homepage.
+ * This component adapts the desktop view for tablet screen sizes, including navigation,
+ * hero section, service banners, about information, expertise showcases,
+ * meeting booking, technology displays, team introductions, FAQs, careers, and footer.
+ * It uses UI components like Accordion, Button, Card, ScrollArea, and Separator.
+ * This component is intended to be displayed on tablet screen sizes (md) and hidden on smaller or larger screens (lg and up).
+ * @returns {JSX.Element} The rendered tablet homepage view.
+ */
+'use client';
 import { ArrowRightIcon } from "lucide-react";
 import React from "react";
 import {
@@ -5,11 +17,11 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../components/ui/accordion";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { ScrollArea, ScrollBar } from "../../../../components/ui/scroll-area";
-import { Separator } from "../../../../components/ui/separator";
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 
 export const HomepageTabletByAnima = (): JSX.Element => {
   // Navigation menu items
@@ -125,7 +137,7 @@ export const HomepageTabletByAnima = (): JSX.Element => {
   ];
 
   return (
-    <div className="w-full bg-white overflow-hidden">
+    <div className="w-full bg-white overflow-hidden hidden md:block lg:hidden">
       {/* Navigation */}
       <header className="w-full py-8 px-12">
         <div className="flex justify-between items-center">

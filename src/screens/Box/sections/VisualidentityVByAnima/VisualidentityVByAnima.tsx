@@ -1,3 +1,12 @@
+/**
+ * @module VisualidentityVByAnima
+ * @description
+ * Displays the typography section of the website's visual identity.
+ * It showcases different heading levels (H1, H2, H3) and text styles (Body, Small)
+ * with their font specifications (e.g., "55px Piazzolla Bold").
+ * This component is purely presentational.
+ * @returns {JSX.Element} The rendered typography section.
+ */
 import React from "react";
 
 export const VisualidentityVByAnima = (): JSX.Element => {

@@ -1,6 +1,15 @@
+/**
+ * @module VisualidentityWrapperByAnima
+ * @description
+ * A section that seems to be part of the visual identity or team introduction,
+ * featuring an image and text content. It uses Card and Separator components.
+ * This component might need `'use client'` if its child `Separator` (which is 'use client')
+ * causes issues, but for now, it's treated as a server component.
+ * @returns {JSX.Element} The rendered section.
+ */
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Separator } from "../../../../components/ui/separator";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export const VisualidentityWrapperByAnima = (): JSX.Element => {
   const teamDescriptions = [

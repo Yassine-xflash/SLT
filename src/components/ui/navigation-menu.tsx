@@ -1,9 +1,33 @@
+/**
+ * @module NavigationMenu
+ * @description
+ * A collection of links for navigating a website. Based on Radix UI Navigation Menu primitive.
+ * Provides components like NavigationMenu, NavigationMenuList, NavigationMenuItem,
+ * NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, NavigationMenuIndicator,
+ * and NavigationMenuViewport.
+ * @see https://www.radix-ui.com/primitives/docs/components/navigation-menu
+ *
+ * @example
+ * <NavigationMenu>
+ *   <NavigationMenuList>
+ *     <NavigationMenuItem>
+ *       <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+ *       <NavigationMenuContent>
+ *         <NavigationMenuLink>Link 1</NavigationMenuLink>
+ *       </NavigationMenuContent>
+ *     </NavigationMenuItem>
+ *   </NavigationMenuList>
+ * </NavigationMenu>
+ *
+ * @requires 'use client'
+ */
+"use client";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,

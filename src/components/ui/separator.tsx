@@ -1,7 +1,31 @@
+/**
+ * @module Separator
+ * @description
+ * A component to visually or semantically separate content.
+ * Based on Radix UI Separator primitive.
+ * @see https://www.radix-ui.com/primitives/docs/components/separator
+ *
+ * @example
+ * <div>
+ *   <h4>Radix Primitives</h4>
+ *   <p>An open-source UI component library.</p>
+ *   <Separator className="my-4" />
+ *   <div style={{ display: 'flex', alignItems: 'center' }}>
+ *     <p>Blog</p>
+ *     <Separator orientation="vertical" className="mx-2" />
+ *     <p>Docs</p>
+ *     <Separator orientation="vertical" className="mx-2" />
+ *     <p>Source</p>
+ *   </div>
+ * </div>
+ *
+ * @requires 'use client'
+ */
+"use client";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,

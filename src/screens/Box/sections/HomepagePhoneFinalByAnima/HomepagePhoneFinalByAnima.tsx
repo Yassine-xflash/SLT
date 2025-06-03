@@ -1,3 +1,15 @@
+/**
+ * @module HomepagePhoneFinalByAnima
+ * @description
+ * Provides the mobile-specific layout and content for the homepage.
+ * This component adapts the homepage for small screen sizes, including simplified navigation,
+ * hero section, service banners, about information, expertise showcases,
+ * meeting booking, technology displays, team introductions, FAQs, careers, and footer.
+ * It uses UI components like Accordion, Button, Card, ScrollArea, and Separator.
+ * This component is intended to be displayed on mobile screen sizes (default) and hidden on medium screens and larger (md and up).
+ * @returns {JSX.Element} The rendered mobile homepage view.
+ */
+'use client';
 import { ArrowRightIcon, MenuIcon } from "lucide-react";
 import React from "react";
 import {
@@ -5,11 +17,11 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../../components/ui/accordion";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { ScrollArea, ScrollBar } from "../../../../components/ui/scroll-area";
-import { Separator } from "../../../../components/ui/separator";
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 
 export const HomepagePhoneFinalByAnima = (): JSX.Element => {
   // FAQ data
@@ -117,7 +129,7 @@ export const HomepagePhoneFinalByAnima = (): JSX.Element => {
   ];
 
   return (
-    <div className="w-full bg-white overflow-hidden">
+    <div className="w-full bg-white overflow-hidden block md:hidden">
       {/* Header */}
       <header className="w-full p-8 flex justify-between items-center">
         <MenuIcon className="w-9 h-9" />

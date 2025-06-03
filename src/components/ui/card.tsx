@@ -1,6 +1,34 @@
+/**
+ * @module Card
+ * @description
+ * Components for displaying content in a card-like container.
+ * Includes Card, CardHeader, CardFooter, CardTitle, CardDescription, and CardContent.
+ * These are styled div elements using `React.forwardRef`.
+ *
+ * @component Card - The main container for card content.
+ * @component CardHeader - The header section of a card.
+ * @component CardFooter - The footer section of a card.
+ * @component CardTitle - The title within a card header.
+ * @component CardDescription - The description text within a card header.
+ * @component CardContent - The main content area of a card.
+ *
+ * @example
+ * <Card>
+ *   <CardHeader>
+ *     <CardTitle>Card Title</CardTitle>
+ *     <CardDescription>Card Description</CardDescription>
+ *   </CardHeader>
+ *   <CardContent>
+ *     <p>Card content goes here.</p>
+ *   </CardContent>
+ *   <CardFooter>
+ *     <p>Card Footer</p>
+ *   </CardFooter>
+ * </Card>
+ */
 import * as React from "react";
 
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -30,9 +58,12 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLHeadingElement, // Changed to HTMLHeadingElement for semantic correctness, assuming it's a title
+  React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
+  // Assuming CardTitle would typically be a heading element like <h3> or <h4>
+  // If it can be any div, then HTMLDivElement is fine.
+  // For this example, let's assume it's meant to be a div as originally typed.
   <div
     ref={ref}
     className={cn("font-semibold leading-none tracking-tight", className)}
@@ -42,10 +73,10 @@ const CardTitle = React.forwardRef<
 CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement, // Changed to HTMLParagraphElement for semantic correctness
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <p // Changed to <p> for semantic correctness
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
