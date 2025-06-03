@@ -1,15 +1,15 @@
 /**
- * @module VisualidentityVByAnima
+ * @module TypographySection
  * @description
  * Displays the typography section of the website's visual identity.
  * It showcases different heading levels (H1, H2, H3) and text styles (Body, Small)
  * with their font specifications (e.g., "55px Piazzolla Bold").
- * This component is purely presentational.
+ * This component is purely presentational and has been made responsive.
  * @returns {JSX.Element} The rendered typography section.
  */
 import React from "react";
 
-export const VisualidentityVByAnima = (): JSX.Element => {
+export const TypographySection = (): JSX.Element => {
   // Typography examples data for mapping with responsive classes
   const typographyExamples = [
     {
@@ -93,3 +93,7 @@ export const VisualidentityVByAnima = (): JSX.Element => {
     </section>
   );
 };
+
+// If it was intended to be a default export, it would be:
+// export default TypographySection;
+// But since the original was a named export, keeping it consistent.

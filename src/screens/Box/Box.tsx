@@ -13,13 +13,11 @@
  * @returns {JSX.Element} The rendered Box component containing various site sections.
  */
 import React from "react";
-// Old homepage view imports are removed
-import { VisualidentityByAnima } from "@/screens/Box/sections/VisualidentityByAnima";
-import { VisualidentityVByAnima } from "@/screens/Box/sections/VisualidentityVByAnima";
-import { VisualidentityWrapperByAnima } from "@/screens/Box/sections/VisualidentityWrapperByAnima";
 import LogoShowcaseSection from "@/components/sections/LogoShowcaseSection";
 import EmpoweringVisionSection from "@/components/sections/EmpoweringVisionSection";
-import MainPageContentSection from "@/components/sections/MainPageContentSection"; // New import
+import MainPageContentSection from "@/components/sections/MainPageContentSection";
+import { TypographySection } from "@/components/sections/TypographySection";
+import { InfoImageSection } from "@/components/sections/InfoImageSection";
 
 export const Box = (): JSX.Element => {
   return (
@@ -32,9 +30,8 @@ export const Box = (): JSX.Element => {
         <EmpoweringVisionSection />
 
         {/* Visualidentity sections are rendered directly as they now manage their own <section> tag and styling */}
-        <VisualidentityByAnima />
-        <VisualidentityVByAnima />
-        <VisualidentityWrapperByAnima />
+        <TypographySection />
+        <InfoImageSection />
       </div>
     </div>
   );

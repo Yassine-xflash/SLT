@@ -1,1 +1,0 @@
-export { VisualidentityVByAnima } from "./VisualidentityVByAnima";
